@@ -5,6 +5,7 @@ WORKDIR /app
 COPY *.sln .
 COPY */*.csproj ./
 RUN for file in $(ls *.csproj); do mkdir -p ${file%.*}/ && mv $file ${file%.*}/; done
+RUN export DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER=0
 RUN dotnet restore
 
 # copy everything else and build app
