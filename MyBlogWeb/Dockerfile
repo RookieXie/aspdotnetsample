@@ -15,4 +15,4 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
 WORKDIR /app
 COPY --from=build /app/MyBlogWeb/out ./
-ENTRYPOINT ["dotnet", "MyBlogWeb.dll"]
+ENTRYPOINT ["dotnet", "MyBlogWeb.dll", "--server.urls", "http://*:60000"]
