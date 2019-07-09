@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyBlog.DBContext\MyBlog.DBContext.csproj" />
+    <ProjectReference Include="..\MyBlog.Models\MyBlog.Models.csproj" />
+  </ItemGroup>
+
+</Project>

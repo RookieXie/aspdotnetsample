@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Sample.WebApi
+namespace MyBlogWeb
 {
     public class Program
     {
@@ -19,6 +19,12 @@ namespace Sample.WebApi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.SetBasePath(Directory.GetCurrentDirectory());
+                config.AddIniFile(
+                    "myConfig.json", optional: true, reloadOnChange: true);
+            })
+            .UseStartup<Startup>();
     }
 }
