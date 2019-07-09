@@ -98,3 +98,7 @@
 2019-07-09 15:28:52.2056 Info Loading assembly: NLog.Web.AspNetCore
 2019-07-09 15:28:52.2953 Info Adding target AsyncTargetWrapper(Name=allfile)
 2019-07-09 15:28:52.3348 Info Found 26 configuration items
+2019-07-09 18:34:43.2604 Info Message Template Auto Format enabled
+2019-07-09 18:34:43.2738 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-09 18:34:43.3945 Info Adding target AsyncTargetWrapper(Name=allfile)
+2019-07-09 18:34:43.4446 Info Found 26 configuration items
