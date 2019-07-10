@@ -20,6 +20,14 @@ namespace MyBlogWeb.Controllers
             this.logger = logger;
             this.testApiService = testApiService;
         }
+        [HttpGet]
+        [Route("values/test")]
+        public string Test()
+        {
+            //var api = testApiService.Gets();
+            //logger.LogDebug("哈哈哈哈哈");
+            return "test";
+        }
         /// <summary>
         ///  GET api/values
         /// </summary>

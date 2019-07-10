@@ -102,3 +102,23 @@
 2019-07-09 18:34:43.2738 Info Loading assembly: NLog.Web.AspNetCore
 2019-07-09 18:34:43.3945 Info Adding target AsyncTargetWrapper(Name=allfile)
 2019-07-09 18:34:43.4446 Info Found 26 configuration items
+2019-07-10 08:59:04.0876 Info Message Template Auto Format enabled
+2019-07-10 08:59:04.1012 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-10 08:59:04.2463 Info Adding target AsyncTargetWrapper(Name=allfile)
+2019-07-10 08:59:04.2936 Info Found 26 configuration items
+2019-07-10 08:59:37.2081 Info Message Template Auto Format enabled
+2019-07-10 08:59:37.2286 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-10 08:59:37.3408 Info Adding target AsyncTargetWrapper(Name=allfile)
+2019-07-10 08:59:37.3887 Info Found 26 configuration items
+2019-07-10 09:57:30.1240 Info Message Template Auto Format enabled
+2019-07-10 09:57:30.1387 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-10 09:57:30.2354 Info Adding target AsyncTargetWrapper(Name=allfile)
+2019-07-10 09:57:30.2774 Info Found 26 configuration items
+2019-07-10 09:58:41.7095 Info Message Template Auto Format enabled
+2019-07-10 09:58:41.7240 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-10 09:58:41.8167 Info Adding target AsyncTargetWrapper(Name=allfile)
+2019-07-10 09:58:41.8656 Info Found 26 configuration items
+2019-07-10 10:07:19.0695 Info Message Template Auto Format enabled
+2019-07-10 10:07:19.0886 Info Loading assembly: NLog.Web.AspNetCore
+2019-07-10 10:07:19.1787 Info Adding target AsyncTargetWrapper(Name=allfile)
+2019-07-10 10:07:19.2275 Info Found 26 configuration items

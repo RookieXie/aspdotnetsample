@@ -12,7 +12,7 @@ namespace MyBlog.Test
         {
             var testapi = new Mock<ITestApiService>();
             testapi.Setup(a => a.Get(1)).Returns(new Models.TestApi { Id = 1 });
-           valuesController = new ValuesController(null, testapi.Object);
+           valuesController = new ValuesController(null,testapi.Object);
         }
         [Fact]
         public void Test1()
