@@ -41,8 +41,13 @@ namespace MyBlogWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(opt =>
+                {
+                    opt.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+                });//返回值驼峰法
             services.AddDbContext<EFContext>(options =>
              options.UseMySql(Configuration.GetConnectionString("MySQLConnection")));
             //添加Dapper支持
@@ -66,10 +71,11 @@ namespace MyBlogWeb
                 c.IncludeXmlComments(xmlPath);
             });
             //services.AddScoped<ITestApiService, TestApiService>();
+            //自行注入处理
             services.AddAutoScope();
 
 
-
+            #region 测试生命周期
             services.AddTransient<IOperationTransient, MyOperation>();
             services.AddScoped<IOperationScoped, MyOperation>();
             services.AddSingleton<IOperationSingleton, MyOperation>();
@@ -77,6 +83,7 @@ namespace MyBlogWeb
 
             // OperationService depends on each of the other Operation types.
             services.AddTransient<OperationService, OperationService>();
+            #endregion
             //跨域
             services.AddCors(option =>
             {
@@ -110,9 +117,10 @@ namespace MyBlogWeb
 
             //Cors
             app.UseCors(MyAllowSpecificOrigins);
-           
+
             app.UseSwagger();
-            app.UseSwaggerUI(c=> {
+            app.UseSwaggerUI(c =>
+            {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
             //app.Use(async (context, next) =>
