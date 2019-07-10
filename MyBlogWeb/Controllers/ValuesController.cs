@@ -43,7 +43,7 @@ namespace MyBlogWeb.Controllers
 
         // GET api/values/5
 
-        //[HttpGet("{id}")]
+        [HttpGet]
         [Route("values/get/{id:int:min(1)}")]
         public int Get(int id)
         {
@@ -59,14 +59,14 @@ namespace MyBlogWeb.Controllers
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
+        [HttpPut]
         [Route("values/ge4t")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
         [Route("values/get5")]
         public void Delete(int id)
         {

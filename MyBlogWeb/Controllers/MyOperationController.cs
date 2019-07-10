@@ -7,7 +7,9 @@ using MyBlog.Services;
 
 namespace MyBlogWeb.Controllers
 {
-    public class MyOperationController : Controller
+    [Route("api/myOperation")]
+    [ApiController]
+    public class MyOperationController : ControllerBase
     {
         public OperationService OperationService { get; }
         public IOperationTransient TransientOperation { get; }
@@ -28,8 +30,8 @@ namespace MyBlogWeb.Controllers
             SingletonInstanceOperation = singletonInstanceOperation;
         }
 
-
-
+        [HttpGet]
+        [Route("index/t")]
         public string Index()
         {
             var controllerStr = $@"Transient:{TransientOperation.OperationId} 
