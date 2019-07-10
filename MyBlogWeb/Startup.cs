@@ -67,6 +67,16 @@ namespace MyBlogWeb
             });
             //services.AddScoped<ITestApiService, TestApiService>();
             services.AddAutoScope();
+
+
+
+            services.AddTransient<IOperationTransient, MyOperation>();
+            services.AddScoped<IOperationScoped, MyOperation>();
+            services.AddSingleton<IOperationSingleton, MyOperation>();
+            services.AddSingleton<IOperationSingletonInstance>(new MyOperation(Guid.Empty));
+
+            // OperationService depends on each of the other Operation types.
+            services.AddTransient<OperationService, OperationService>();
             //跨域
             services.AddCors(option =>
             {
@@ -101,7 +111,6 @@ namespace MyBlogWeb
             //Cors
             app.UseCors(MyAllowSpecificOrigins);
            
-
             app.UseSwagger();
             app.UseSwaggerUI(c=> {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
