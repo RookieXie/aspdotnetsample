@@ -65,7 +65,8 @@ namespace MyBlogWeb
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
-            services.AddScoped<ITestApiService, TestApiService>();
+            //services.AddScoped<ITestApiService, TestApiService>();
+            services.AddAutoScope();
             //跨域
             services.AddCors(option =>
             {
